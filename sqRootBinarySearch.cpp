@@ -4,10 +4,10 @@ using namespace std;
 
 int main()  
 {      
-    int x,ans,start=1;
+    long int x,ans,start=1;
     cout<<"Enter the number: ";
     cin>>x;
-    int end=x/2;
+    long int end=x/2;
     if(x<0)
     {
     	 cout <<endl<<"Sqaure root: Undefined"<< endl;
@@ -19,7 +19,7 @@ int main() 
     {
     	  while(start<=end)
     	  {
-    	  	  int mid= (start+end)/2;
+    	  	  long int mid= (start+end)/2;
     	  	  if(mid*mid==x)
     	  	  {
     	  	  	ans= mid;
