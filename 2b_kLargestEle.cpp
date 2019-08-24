@@ -11,6 +11,7 @@ void swap(int *x, int *y)
 int main()
 {
 	int arr[20],n;
+	bool flag;
 	cout<<"Enter number of elements of array: ";
 	cin>>n;
 	cout<<"Enter elements: ";
@@ -21,12 +22,21 @@ int main()
 	int min_index,k;
 	cout<<"Enter k: ";
 	cin>>k;
-	for (int i = 0; i < n-1; i++)
-		for (int j = 0; j < n-i-1; j++)
-			if (arr[j] > arr[j+1])
-				swap(&arr[j], &arr[j+1]);
+	for (int i = 0; i < k; i++)
+	{	
+	    for (int j = 0; j < n-i-1; j++)
+		{
+		    if (arr[j] > arr[j+1])
+			{
+			    swap(&arr[j], &arr[j+1]);
+			    flag=true;
+			}
+		}
+		if (flag == false) 
+        break; 
+	}
 	cout << "k largest elements: ";
 	for(int i=n-k;i<n;i++)
 	cout<<arr[i]<<" ";
-	return 0;  
+	return 0;
 }
