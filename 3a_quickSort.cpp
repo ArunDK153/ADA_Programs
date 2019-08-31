@@ -4,9 +4,9 @@ using namespace std;
 
 void swap(int* a, int* b)  
 {
-	int t = *a;  
+	int temp = *a;  
 	*a = *b;  
-	*b = t;  
+	*b = temp;  
 }  
 
 int partition (int arr[], int low, int high)  
