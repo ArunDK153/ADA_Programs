@@ -52,6 +52,7 @@ void merge(int arr[], int l, int m, int r)
 	k = l;
 	while(i<n1 && j<n2) 
 	{
+		mcount++;
 		if(left[i]<=right[j]) 
 		{
 			arr[k] = left[i]; 
@@ -78,9 +79,8 @@ void merge(int arr[], int l, int m, int r)
 	}
 }
 
-int countMergeSort(int arr[], int l, int r) 
-{ 
-	mcount++;
+void countMergeSort(int arr[], int l, int r) 
+{
 	if(l<r) 
 	{
 		int m = l+(r-l)/2; 
@@ -88,7 +88,6 @@ int countMergeSort(int arr[], int l, int r)
 		countMergeSort(arr, m+1, r); 
 		merge(arr, l, m, r);
 	}
-	return mcount;
 }
 
 int main()
@@ -106,7 +105,7 @@ int main()
 	copy(begin(arr), end(arr), begin(arr3));
 	int bubbleSortCount = countBubbleSort(arr1,n);
 	int selectionSortCount = countSelectionSort(arr2,n);
-	int mergeSortCount = countMergeSort(arr3,0,n-1);
+	countMergeSort(arr3,0,n-1);
 	cout<<"Sorted array is: \n";
 	for(int i=0;i<n;i++)
 	{
@@ -116,6 +115,6 @@ int main()
 	cout<<"Number of comparisions in \n";
 	cout<<"Bubble Sort: "<<bubbleSortCount<<"\n";
 	cout<<"Selection Sort: "<<selectionSortCount<<"\n";
-	cout<<"Merge Sort: "<<mergeSortCount<<"\n";
+	cout<<"Merge Sort: "<<mcount<<"\n";
 	return 0;
 }
