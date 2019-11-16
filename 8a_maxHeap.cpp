@@ -14,15 +14,15 @@ bool isHeap(int arr[],  int n)
 
 int main()
 {
-    int arr[50],n;
-  	std::cout<<"Enter number of elements: ";
-	std::cin>>n;
-	std::cout<<"Enter elements: ";
-	for(int i =0;i<n;i++)
-	{
-		std::cin>>arr[i];
-	}
-	std::cout<<"Is it binary max heap? ";
+    int arr[50],n;	
+    std::cout<<"Enter number of elements: ";
+    std::cin>>n;
+    std::cout<<"Enter elements: ";
+    for(int i =0;i<n;i++)	
+    {
+	std::cin>>arr[i];
+    }
+    std::cout<<"Is it binary max heap? "<<endl;
     isHeap(arr, n)? std::cout<<"Yes" : std::cout<<"No";
     return 0;
 }
